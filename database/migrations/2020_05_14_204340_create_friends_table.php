@@ -14,13 +14,15 @@ class CreateFriendsTable extends Migration
     public function up()
     {
         Schema::create('friends', function (Blueprint $table) {
-            $table->bigInteger('sender_user_id');
-            $table->bigInteger('receiver_user_id');
+            $table->unsignedBigInteger('sender_id');
+            $table->unsignedBigInteger('receiver_id');
             $table->string('status');
             $table->timestamps();
 
-            //@todo add foreign keys for those 2 columns
+            $table->foreign('sender_id')->references('id')->on('users');
+            $table->foreign('receiver_id')->references('id')->on('users');
         });
+
     }
 
     /**
