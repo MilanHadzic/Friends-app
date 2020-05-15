@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('login', 'Api\AuthController@login');
-Route::post('register', 'Api\AuthController@register');
+Route::post('/login', 'Api\AuthController@login');
+Route::post('/register', 'Api\AuthController@register');
+Route::get('/users', 'Api\UsersController@index');
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
