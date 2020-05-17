@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class RecivedInvites extends Model
+class Invite extends Model
 {
     protected $fillable
         = [
@@ -13,4 +13,9 @@ class RecivedInvites extends Model
             'receiver_id',
             'status'
         ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'sender_id', 'id');
+    }
 }
