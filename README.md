@@ -77,3 +77,15 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Postman Collection
+
+https://documenter.getpostman.com/view/10402357/SzmmTu4c
+
+## Start project
+
+Composer install
+
+Php artisan migrate 
+
+php artisan passport:install
